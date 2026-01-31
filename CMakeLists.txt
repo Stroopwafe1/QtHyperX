@@ -1,15 +1,15 @@
 # SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
 # SPDX-License-Identifier: BSD-3-Clause
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.24)
 
 project(qthyperx VERSION 0.1)
 
 include(FeatureSummary)
 
-set(QT6_MIN_VERSION 6.5.0)
-set(KF6_MIN_VERSION 6.0.0)
-set(KIRIGAMI_ADDONS_MIN_VERSION 1.2.40)
+set(QT6_MIN_VERSION 6.7.0)
+set(KF6_MIN_VERSION 6.12.0)
+set(KIRIGAMI_ADDONS_MIN_VERSION 1.6.0)
 
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 
@@ -24,7 +24,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMSetupVersion)
 include(ECMFindQmlModule)
 include(ECMQmlModule)
-include(ECMQmlModule)
+include(ECMAddAndroidApk)
 
 if (NOT ANDROID)
     include(KDEGitCommitHooks)
@@ -42,15 +42,13 @@ if (NOT ANDROID)
 endif()
 
 find_package(Qt6 ${QT6_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg ${QT_EXTRA_COMPONENTS})
-find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons Config I18n IconThemes)
 
 find_package(KF6KirigamiAddons ${KIRIGAMI_ADDONS_MIN_VERSION} REQUIRED)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components and runtime dependency"
 )
-
-qt_policy(SET QTP0001 NEW)
 
 ecm_find_qmlmodule(org.kde.kirigamiaddons.formcard)
 ecm_find_qmlmodule(org.kde.kirigamiaddons.statefulapp)

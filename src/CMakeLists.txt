@@ -22,7 +22,8 @@ target_sources(qthyperx_static PUBLIC
     qthyperxapplication.h
 )
 
-pkg_check_modules(HIDAPI REQUIRED IMPORTED_TARGET hidapi-hidraw)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(HIDAPI REQUIRED IMPORTED_TARGET GLOBAL hidapi-hidraw)
 
 target_link_libraries(qthyperx_static PUBLIC
     Qt6::Core
@@ -65,3 +66,4 @@ target_link_libraries(qthyperx PUBLIC
     ${HIDAPI_LIBRARIES}
 )
 install(TARGETS qthyperx ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+ecm_add_android_apk(%{APPNAMELC} ANDROID_DIR ${CMAKE_SOURCE_DIR}/android)
