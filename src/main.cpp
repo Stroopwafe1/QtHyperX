@@ -1,6 +1,6 @@
 /*
     SPDX-License-Identifier: GPL-2.0-or-later
-    SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+    SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 */
 
 #include <QtGlobal>
@@ -66,16 +66,16 @@ int main(int argc, char *argv[])
         // The program version string.
         QStringLiteral(QTHYPERX_VERSION_STRING),
         // Short description of what the app does.
-        i18n("Application Description"),
+        i18n("Manage your HyperX headset"),
         // The license this code is released under.
         KAboutLicense::GPL,
         // Copyright Statement.
-        i18n("(c) %{CURRENT_YEAR}"));
-    aboutData.addAuthor(i18nc("@info:credit", "%{AUTHOR}"),
+        i18n("(c) 2026"));
+    aboutData.addAuthor(i18nc("@info:credit", "Lilith Houtjes"),
                         i18nc("@info:credit", "Maintainer"),
                         u"%{EMAIL}"_s,
-                        u"https://yourwebsite.com"_s);
-    aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
+                        u"https://stroopwafel.dev"_s);
+    //aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.qthyperx"_s));
 

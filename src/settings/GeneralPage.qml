@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+// SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 pragma ComponentBehavior: Bound

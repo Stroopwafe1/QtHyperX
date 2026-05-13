@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-2-Clause
-# SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+# SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 
 add_subdirectory(settings)
 

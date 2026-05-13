@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+// SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 
 #include "qthyperxapplication.h"
 #include <KAuthorized>

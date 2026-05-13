@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <chrono>
 
 #define VENDOR_ID 0x03f0
 #define PRODUCT_ID 0x098d
@@ -151,6 +152,8 @@ void HyperXBackend::onConnect() {
 }
 
 void HyperXBackend::readLoop() {
+	using namespace std::chrono_literals;
+
 	unsigned char buffer[32];
 	memset(buffer, 0, 32);
 	while (m_Running) {
@@ -159,16 +162,19 @@ void HyperXBackend::readLoop() {
 			return;
 		}
 		int bytesRead = hid_read(m_Handle, buffer, 32);
+		
+		if (bytesRead < 3) {
+			std::this_thread::sleep_for(2000ms);
+			continue;
+		}
+
 		std::cout << std::dec << "Bytes read: " << bytesRead << " \t(0x" << std::hex;
 		for (int i = 0; i < bytesRead; i++) {
 			std::cout << std::setfill('0') << std::setw(2) <<  (int)buffer[i];
 		}
 		std::cout << ")" << std::endl;
 		std::cout.flush();
-		if (bytesRead < 3) {
-			//std::cout << "Bytes read were less than 3" << std::endl;
-			continue;
-		}
+		
 		if (buffer[0] != 0x21 || buffer[1] != 0xbb) {
 			//std::cout << "Error while reading: Bytes were unexpected start" << std::endl;
 			continue;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+// SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -62,7 +62,7 @@ StatefulApp.StatefulWindow {
 	pageStack.initialPage: FormCard.FormCardPage {
 		id: page
 
-		title: i18nc("@title", "QtHyperXbelp")
+		title: i18nc("@title", "QtHyperX")
 
 		//actions: [incrementCounterAction]
 

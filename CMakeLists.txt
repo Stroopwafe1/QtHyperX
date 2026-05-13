@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+# SPDX-FileCopyrightText: 2026 Lilith Houtjes <%{EMAIL}>
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.24)
 
-project(qthyperx VERSION 0.1)
+project(qthyperx VERSION 1.0.1)
 
 include(FeatureSummary)
 
